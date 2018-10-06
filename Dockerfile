@@ -5,7 +5,7 @@ FROM alpine:3.8 as certs
 RUN apk add --no-cache ca-certificates
 
 FROM $target/alpine:3.8
-LABEL maintainer="Jesse Stuart <hi@jessestuart.com>"
+LABEL maintainer="Paul Canham <paul@canham.io>"
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 COPY tiller /tiller
