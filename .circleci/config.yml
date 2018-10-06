@@ -2,13 +2,13 @@ version: 2.0
 
 build_jobs: &build_jobs
   jobs:
-    - build-amd64
-    - build-arm64
+#    - build-amd64
+#    - build-arm64
     - build-armhf
     - push-manifest:
         requires:
-          - build-amd64
-          - build-arm64
+#          - build-amd64
+#          - build-arm64
           - build-armhf
 
 workflows:
@@ -93,16 +93,16 @@ shared: &shared
           .circleci/push-multiarch.sh
 
 jobs:
-  build-amd64:
-    <<: *shared
-    environment:
-      GOARCH: amd64
-      TARGET: amd64
-  build-arm64:
-    <<: *shared
-    environment:
-      GOARCH: arm64
-      TARGET: arm64v8
+#  build-amd64:
+#    <<: *shared
+#    environment:
+#      GOARCH: amd64
+#      TARGET: amd64
+#  build-arm64:
+#    <<: *shared
+#    environment:
+#      GOARCH: arm64
+#      TARGET: arm64v8
   build-armhf:
     <<: *shared
     environment:
@@ -115,7 +115,7 @@ jobs:
     environment:
       GITHUB_REPO: helm/helm
       IMAGE: tiller
-      REGISTRY: jessestuart
+      REGISTRY: pcanham
     steps:
       - checkout
       - setup_remote_docker
