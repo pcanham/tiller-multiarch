@@ -3,7 +3,7 @@ echo 'export DIR=`pwd`' >>$BASH_ENV
 echo 'export QEMU_VERSION=v2.12.0' >>$BASH_ENV
 echo 'export GITHUB_REPO=helm/helm' >>$BASH_ENV
 echo 'export GO_REPO=k8s.io/helm' >>$BASH_ENV
-echo 'export VERSION=$(curl -s https://api.github.com/repos/${GITHUB_REPO}/releases | jq -r "sort_by(.tag_name)[].tag_name" | grep -v "\-rc" | sort -V |tail -1)' >>$BASH_ENV
+echo 'export VERSION=$(curl -s https://api.github.com/repos/${GITHUB_REPO}/releases | jq -r "sort_by(.tag_name)[].tag_name" | grep -v "\-rc" | sort -t. -k1,1 -k2,2n |tail -n1)' >>$BASH_ENV
 
 echo 'export GOPATH=/root/go' >>$BASH_ENV
 echo 'export GOROOT=/usr/local/go' >>$BASH_ENV
