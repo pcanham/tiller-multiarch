@@ -21,17 +21,17 @@ deployed to your cluster. The simplest way to do that is to just substitute this
 image in the `helm init` command, e.g.,:
 
 ```console
-$ helm init --tiller-image=jessestuart/tiller:v2.9.1
+$ helm init --tiller-image=pcanham/tiller:v2.9.1
 ```
 
 Note that depending on your version of Kubernetes and your RBAC configuration,
 you'll likely need to create and specify a `ServiceAccount` as well, e.g.:
 
 ```console
-$ helm init --tiller-image=jessestuart/tiller:v2.9.1 --service-account tiller
+$ helm init --tiller-image=pcanham/tiller:v2.9.1 --service-account tiller
 ```
 
-[circleci-badge]: https://circleci.com/gh/jessestuart/tiller-multiarch/tree/master.svg?style=shield
-[circleci-link]: https://circleci.com/gh/jessestuart/tiller-multiarch/tree/master
-[dockerhub-badge]: https://img.shields.io/docker/pulls/jessestuart/tiller.svg?style=flat-square
-[dockerhub-link]: https://hub.docker.com/r/jessestuart/tiller/
+[circleci-badge]: https://circleci.com/gh/pcanham/tiller-multiarch/tree/master.svg?style=shield
+[circleci-link]: https://circleci.com/gh/pcanham/tiller-multiarch/tree/master
+[dockerhub-badge]: https://img.shields.io/docker/pulls/pcanham/tiller.svg?style=flat-square
+[dockerhub-link]: https://hub.docker.com/r/pcanham/tiller/
