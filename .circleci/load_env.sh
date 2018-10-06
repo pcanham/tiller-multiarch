@@ -10,7 +10,7 @@ echo 'export GOROOT=/usr/local/go' >>$BASH_ENV
 
 echo 'export IMAGE=tiller' >>$BASH_ENV
 echo 'export PROJECT_PATH=$GOPATH/src/$GO_REPO' >>$BASH_ENV
-echo 'export REGISTRY=jessestuart' >>$BASH_ENV
+echo 'export REGISTRY=pcanham' >>$BASH_ENV
 echo 'export IMAGE_ID="${REGISTRY}/${IMAGE}:${VERSION}-${GOARCH}"' >>$BASH_ENV
 
 echo 'export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"' >>$BASH_ENV
